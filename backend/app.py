@@ -43,7 +43,7 @@ def create_app():
     mongo.init_app(app)
     jwt.init_app(app)
     bcrypt.init_app(app)
-    CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "http://localhost:3001"], "supports_credentials": True, "allow_headers": ["Content-Type", "Authorization"], "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"]}})
+    CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "http://localhost:3001", "https://speakify-ai-five.vercel.app"], "supports_credentials": True, "allow_headers": ["Content-Type", "Authorization"], "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"]}})
     
     @app.before_request
     def log_request():
