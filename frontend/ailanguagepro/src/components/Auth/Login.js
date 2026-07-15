@@ -63,9 +63,9 @@ const Login = () => {
   };
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: 'transparent', display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ minHeight: '100vh', bgcolor: '#F7F3EA', display: 'flex', flexDirection: 'column' }}>
       {/* Header */}
-      <AppBar position="static" sx={{ bgcolor: 'rgba(247, 243, 234, 0.4)', backdropFilter: 'blur(20px)', boxShadow: 'none', borderBottom: '1px solid rgba(27,27,24,0.05)' }}>
+      <AppBar position="static" sx={{ bgcolor: '#EDE6D6', boxShadow: 'none', borderBottom: '1px solid rgba(27,27,24,0.05)' }}>
         <Toolbar>
           <Button
             startIcon={<ArrowBack />}
@@ -99,11 +99,10 @@ const Login = () => {
       <Container maxWidth="sm" sx={{ py: 10, flex: 1, display: 'flex', alignItems: 'center' }}>
         <Paper sx={{ 
           p: 6, 
-          bgcolor: 'rgba(255, 255, 255, 0.5)',
-          backdropFilter: 'blur(20px)',
-          borderRadius: '16px',
-          boxShadow: '0 8px 32px rgba(27,27,24,0.04)',
-          border: '1px solid rgba(255, 255, 255, 0.6)',
+          bgcolor: '#EDE6D6',
+          borderRadius: '12px',
+          boxShadow: 'none',
+          border: '1px solid rgba(27,27,24,0.03)',
           width: '100%'
         }}>
           <Box sx={{ textAlign: 'center', mb: 5 }}>
@@ -150,7 +149,7 @@ const Login = () => {
                 sx={{
                   '& .MuiOutlinedInput-root': {
                     borderRadius: '8px',
-                    bgcolor: 'rgba(255, 255, 255, 0.4)',
+                    bgcolor: '#F7F3EA',
                     '& fieldset': { borderColor: 'rgba(27,27,24,0.1)' },
                     '&:hover fieldset': { borderColor: 'rgba(27,27,24,0.2)' },
                     '&.Mui-focused fieldset': { borderColor: '#CC785C' },
@@ -179,7 +178,7 @@ const Login = () => {
                 sx={{
                   '& .MuiOutlinedInput-root': {
                     borderRadius: '8px',
-                    bgcolor: 'rgba(255, 255, 255, 0.4)',
+                    bgcolor: '#F7F3EA',
                     '& fieldset': { borderColor: 'rgba(27,27,24,0.1)' },
                     '&:hover fieldset': { borderColor: 'rgba(27,27,24,0.2)' },
                     '&.Mui-focused fieldset': { borderColor: '#CC785C' },

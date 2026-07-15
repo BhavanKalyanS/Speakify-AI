@@ -33,15 +33,6 @@ function App() {
       <CssBaseline />
       <style>
         {`
-          body {
-            background-color: #F7F3EA;
-            background-image: 
-              radial-gradient(at 0% 0%, rgba(204, 120, 92, 0.15) 0, transparent 50%), 
-              radial-gradient(at 100% 0%, rgba(107, 107, 99, 0.08) 0, transparent 50%), 
-              radial-gradient(at 100% 100%, rgba(204, 120, 92, 0.1) 0, transparent 50%), 
-              radial-gradient(at 0% 100%, rgba(27, 27, 24, 0.05) 0, transparent 50%);
-            background-attachment: fixed;
-          }
           .mono-emoji {
             filter: grayscale(100%) sepia(100%) hue-rotate(335deg) saturate(320%) brightness(85%);
             display: inline-block;

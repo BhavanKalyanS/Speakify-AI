@@ -33,8 +33,6 @@ import {
   ListItemIcon,
   ListItemText,
   ListItemButton,
-  useTheme,
-  useMediaQuery,
 } from '@mui/material';
 import {
   Home,
@@ -83,9 +81,6 @@ const UserDashboard = () => {
   const [recordHistory, setRecordHistory] = useState([]);
   const [profileAnchorEl, setProfileAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
-
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
 
   const navigate = useNavigate();
@@ -247,33 +242,44 @@ const UserDashboard = () => {
   const streak = recordHistory.length > 0 ? (recordHistory.length % 5) + 3 : 0;
 
   return (
-    <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: 'transparent' }}>
-      {/* Header for Mobile */}
-      {!isDesktop && (
-        <AppBar position="fixed" sx={{ bgcolor: 'rgba(247, 243, 234, 0.85)', backdropFilter: 'blur(16px)', boxShadow: 'none', borderBottom: '1px solid rgba(27,27,24,0.05)' }}>
-          <Toolbar sx={{ justifyContent: 'space-between' }}>
-            <IconButton onClick={() => setDrawerOpen(true)} sx={{ color: '#1B1B18' }}>
-              <MenuIcon />
-            </IconButton>
+    <Box sx={{ 
+      minHeight: '100vh', 
+      bgcolor: '#F7F3EA',
+      display: 'flex', 
+      flexDirection: 'column' 
+    }}>
+      {/* Header */}
+      <AppBar position="static" sx={{ bgcolor: '#EDE6D6', boxShadow: 'none', borderBottom: '1px solid rgba(27,27,24,0.05)' }}>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          <IconButton
+            onClick={() => setDrawerOpen(true)}
+            sx={{ color: '#1B1B18' }}
+          >
+            <MenuIcon />
+          </IconButton>
 
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-              <Box sx={{ width: 32, height: 32, bgcolor: '#CC785C', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Typography sx={{ color: 'white', fontWeight: 'bold', fontSize: '1.2rem', fontFamily: 'Georgia, serif' }}>
-                  S
-                </Typography>
-              </Box>
-              <Typography variant="h6" sx={{ color: '#1B1B18', fontWeight: 700, fontFamily: 'Georgia, serif' }}>
-                Speakify AI
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+            <Box sx={{ 
+              width: 32, 
+              height: 32, 
+              bgcolor: '#CC785C', 
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <Typography sx={{ color: 'white', fontWeight: 'bold', fontSize: '1.2rem', fontFamily: 'Georgia, serif' }}>
+                S
               </Typography>
             </Box>
-          </Toolbar>
-        </AppBar>
-      )}
+            <Typography variant="h6" sx={{ color: '#1B1B18', fontWeight: 700, fontFamily: 'Georgia, serif' }}>
+              Speakify AI
+            </Typography>
+          </Box>
+        </Toolbar>
+      </AppBar>
 
-      {/* Main Content Area */}
-      <Box component="main" sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', width: { md: `calc(100% - 280px)` } }}>
-        {!isDesktop && <Toolbar />} {/* Spacer for mobile app bar */}
-        <Container maxWidth="xl" sx={{ py: { xs: 2, md: 4 }, flex: 1 }}>
+      <Container maxWidth="lg" sx={{ py: 4, flex: 1 }}>
         {currentTab === 0 && (
         <Box>
           {/* Welcome Greeting */}
@@ -939,8 +945,8 @@ const UserDashboard = () => {
       </Container>
 
       {/* Footer */}
-      <Box sx={{ bgcolor: '#1B1B18', py: 4, mt: 'auto' }}>
-        <Container maxWidth="xl">
+      <Box sx={{ bgcolor: '#1B1B18', py: 4 }}>
+        <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center' }}>
             <Typography variant="body2" sx={{ color: '#EDE6D6', opacity: 0.6 }}>
               © 2026 Speakify AI. All rights reserved.
@@ -948,20 +954,16 @@ const UserDashboard = () => {
           </Box>
         </Container>
       </Box>
-      </Box>
 
       {/* Side Navigation Drawer */}
-      <Box component="nav" sx={{ width: { md: 280 }, flexShrink: { md: 0 } }}>
-        <Drawer
-          variant={isDesktop ? "permanent" : "temporary"}
-          anchor="left"
-          open={isDesktop ? true : drawerOpen}
-          onClose={() => setDrawerOpen(false)}
-          ModalProps={{ keepMounted: true }}
-          PaperProps={{
-            sx: { width: 280, bgcolor: 'rgba(255, 255, 255, 0.45)', backdropFilter: 'blur(20px)', borderRight: '1px solid rgba(255, 255, 255, 0.6)' }
-          }}
-        >
+      <Drawer
+        anchor="left"
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        PaperProps={{
+          sx: { width: 280, bgcolor: '#EDE6D6' }
+        }}
+      >
         <Box sx={{ p: 3, borderBottom: '1px solid rgba(27,27,24,0.06)' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
             <Box sx={{ 
@@ -1040,8 +1042,7 @@ const UserDashboard = () => {
             </ListItemButton>
           </ListItem>
         </Box>
-        </Drawer>
-      </Box>
+      </Drawer>
 
       {/* Floating Chatbot */}
       <Chatbot onNavigate={setCurrentTab} />
