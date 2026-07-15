@@ -38,9 +38,9 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#F7F3EA' }}>
+    <Box sx={{ minHeight: '100vh', bgcolor: 'transparent' }}>
       {/* Header */}
-      <AppBar position="static" sx={{ bgcolor: '#EDE6D6', boxShadow: 'none', borderBottom: '1px solid rgba(27,27,24,0.06)' }}>
+      <AppBar position="static" sx={{ bgcolor: 'rgba(247, 243, 234, 0.4)', backdropFilter: 'blur(20px)', boxShadow: 'none', borderBottom: '1px solid rgba(27,27,24,0.06)' }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
             <Box sx={{
@@ -179,10 +179,11 @@ const LandingPage = () => {
 
             <Grid item xs={12} md={5}>
               <Card sx={{
-                bgcolor: '#EDE6D6',
+                bgcolor: 'rgba(255, 255, 255, 0.5)',
+                backdropFilter: 'blur(20px)',
                 borderRadius: '16px',
-                border: '1px solid rgba(27,27,24,0.06)',
-                boxShadow: '0 10px 30px rgba(27,27,24,0.03)',
+                border: '1px solid rgba(255, 255, 255, 0.6)',
+                boxShadow: '0 10px 40px rgba(27,27,24,0.05)',
                 overflow: 'hidden'
               }}>
                 <Box sx={{ bgcolor: '#CC785C', p: 2.5, color: 'white', display: 'flex', alignItems: 'center', gap: 1.5 }}>
@@ -272,7 +273,7 @@ const LandingPage = () => {
       </Box>
 
       {/* Stats Section */}
-      <Box sx={{ py: 6, bgcolor: '#EDE6D6', borderTop: '1px solid rgba(27,27,24,0.04)', borderBottom: '1px solid rgba(27,27,24,0.04)' }}>
+      <Box sx={{ py: 6, bgcolor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(10px)', borderTop: '1px solid rgba(255, 255, 255, 0.4)', borderBottom: '1px solid rgba(255, 255, 255, 0.4)' }}>
         <Container maxWidth="lg">
           <Grid container spacing={4} sx={{ textAlign: 'center' }}>
             <Grid item xs={12} md={3}>
@@ -343,13 +344,15 @@ const LandingPage = () => {
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <Card sx={{
                   height: '100%',
-                  bgcolor: '#EDE6D6',
-                  borderRadius: '12px',
-                  boxShadow: 'none',
-                  border: '1px solid rgba(27,27,24,0.03)',
-                  transition: 'transform 0.2s ease',
+                  bgcolor: 'rgba(255, 255, 255, 0.5)',
+                  backdropFilter: 'blur(16px)',
+                  borderRadius: '16px',
+                  boxShadow: '0 8px 32px rgba(27,27,24,0.04)',
+                  border: '1px solid rgba(255, 255, 255, 0.6)',
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
                   '&:hover': {
-                    transform: 'translateY(-4px)'
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 12px 40px rgba(204,120,92,0.1)'
                   }
                 }}>
                   <CardContent sx={{ p: 4 }}>
@@ -434,11 +437,12 @@ const LandingPage = () => {
 
       {/* CTA Section */}
       <Box sx={{
-        bgcolor: '#EDE6D6',
+        bgcolor: 'rgba(255, 255, 255, 0.3)',
+        backdropFilter: 'blur(10px)',
         py: 10,
         textAlign: 'center',
-        borderTop: '1px solid rgba(27,27,24,0.05)',
-        borderBottom: '1px solid rgba(27,27,24,0.05)'
+        borderTop: '1px solid rgba(255, 255, 255, 0.4)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.4)'
       }}>
         <Container maxWidth="md">
           <Typography variant="h2" sx={{

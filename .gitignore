@@ -1,50 +1,22 @@
-# Python virtual environments
-venv/
-.venv/
-backend/venv/
-
-# Python cache
-*.pyc
-__pycache__/
-/backend/*.pyc
-/backend/__pycache__/
-
-# Environment files
-.env
-/backend/.env
-
-# Backend data / uploads
 /backend/data/
 /backend/uploads/
 /backend/local_data.json
-
-# ML models (large files)
-*.pkl
-*.h5
+/backend/.env
+/backend/*.pyc
+/backend/__pycache__/
+/backend/venv/
+/frontend/node_modules/
+/frontend/ailanguagepro/node_modules/
+/frontend/ailanguagepro/build/
+.vscode/
+.venv/
+venv/
+*.pyc
+__pycache__/
 *.npy
-
-# Audio files
 *.wav
 *.mp3
 *.flac
-
-# Node modules
-node_modules/
-/frontend/node_modules/
-/frontend/ailanguagepro/node_modules/
-
-# React build
-/frontend/ailanguagepro/build/
-
-# OS files
 .DS_Store
-Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-*.swp
-
-# Logs
+.env
 *.log
-npm-debug.log*

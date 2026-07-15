@@ -534,8 +534,10 @@ const AdminDashboard = () => {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        p: { xs: 2, md: 4 }
+        p: { xs: 2, md: 4 },
+        bgcolor: 'transparent'
       }}>
+        <Container maxWidth="xl" sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
         
         {/* Mobile Toolbar */}
         <Box sx={{ 
@@ -1028,6 +1030,7 @@ const AdminDashboard = () => {
           </>
         )}
 
+        </Container>
       </Box>
 
       {/* Drawer for Mobile Screens */}
@@ -1357,7 +1360,6 @@ const AdminDashboard = () => {
           <Button variant="contained" onClick={handleExport} sx={{ bgcolor: '#CC785C', color: 'white', fontWeight: 'bold', fontFamily: '"Inter", sans-serif', textTransform: 'none', '&:hover': { bgcolor: '#b8674d' }, borderRadius: '8px' }}>Download</Button>
         </DialogActions>
       </Dialog>
-
     </Box>
   );
 };
